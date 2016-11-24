@@ -1,0 +1,65 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package es.ucm.povaleFiles;
+
+import es.ucm.povaleFiles.entities.Directory;
+import es.ucm.povaleFiles.entities.File;
+import es.ucm.povaleFiles.functions.BaseName;
+import es.ucm.povaleFiles.functions.Children;
+import es.ucm.povaleFiles.functions.ChildrenRec;
+import es.ucm.povaleFiles.functions.Extension;
+import es.ucm.povaleFiles.functions.Files;
+import es.ucm.povaleFiles.functions.FilesRec;
+import es.ucm.povaleFiles.functions.IsDirectory;
+import es.ucm.povaleFiles.functions.Name;
+import java.util.Arrays;
+import java.util.List;
+import tfg.Function.Function;
+import tfg.Plugin.PluginInfo;
+import tfg.Predicate.Predicate;
+
+/**
+ *
+ * @author manuel
+ */
+public class FilesPlugin extends PluginInfo {
+    public static String FILES_ID_PLUGIN = "es.ucm.povale.FilesPlugin";
+    
+
+    @Override
+    public String getIdPlugin() {
+        return FILES_ID_PLUGIN;
+    }
+
+    @Override
+    public List<Function> getFunctions() {
+        return Arrays.asList(
+                new BaseName(), 
+                new Children(), 
+                new ChildrenRec(),
+                new Extension(),
+                new Files(),
+                new FilesRec(),
+                new Name()
+        );
+    }
+
+    @Override
+    public List<Predicate> getPredicates() {
+        return Arrays.asList(
+                new IsDirectory()
+        );
+    }
+
+    @Override
+    public List<Class<?>> getEntities() {
+        return Arrays.asList(
+                File.class,
+                Directory.class
+        );
+    }
+    
+}
