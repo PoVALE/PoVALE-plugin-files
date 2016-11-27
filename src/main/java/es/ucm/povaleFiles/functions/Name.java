@@ -24,8 +24,8 @@
 package es.ucm.povaleFiles.functions;
 
 import es.ucm.povaleFiles.entities.File;
-import tfg.Entity.StringEntity;
-import tfg.Function.Function;
+import tfg.entity.StringEntity;
+import tfg.function.Function;
 import tfg.annotation.CallableMethod;
 
 /**
