@@ -25,7 +25,7 @@ package es.ucm.povaleFiles.functions;
 
 import es.ucm.povaleFiles.entities.Directory;
 import es.ucm.povaleFiles.entities.File;
-import tfg.Predicate.Predicate;
+import tfg.predicate.Predicate;
 import tfg.annotation.CallableMethod;
 
 /**
