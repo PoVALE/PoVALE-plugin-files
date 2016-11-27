@@ -26,8 +26,8 @@ package es.ucm.povaleFiles.functions;
 import es.ucm.povaleFiles.entities.Directory;
 import es.ucm.povaleFiles.entities.File;
 import java.util.List;
-import tfg.Entity.ListEntity;
-import tfg.Function.Function;
+import tfg.entity.ListEntity;
+import tfg.function.Function;
 import tfg.annotation.CallableMethod;
 
 /**
