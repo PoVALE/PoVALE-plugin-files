@@ -23,10 +23,10 @@
  */
 package es.ucm.povaleFiles.functions;
 
+import es.ucm.povale.annotation.CallableMethod;
+import es.ucm.povale.entity.ListEntity;
+import es.ucm.povale.function.Function;
 import es.ucm.povaleFiles.entities.Directory;
-import tfg.Entity.ListEntity;
-import tfg.Function.Function;
-import tfg.annotation.CallableMethod;
 
 /**
  * Function that obtains the immediate children of a given directory, include

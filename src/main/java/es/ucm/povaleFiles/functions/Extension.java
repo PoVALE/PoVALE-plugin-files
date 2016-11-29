@@ -24,9 +24,9 @@
 package es.ucm.povaleFiles.functions;
 
 import es.ucm.povaleFiles.entities.File;
-import tfg.Entity.StringEntity;
-import tfg.Function.Function;
-import tfg.annotation.CallableMethod;
+import es.ucm.povale.entity.StringEntity;
+import es.ucm.povale.function.Function;
+import es.ucm.povale.annotation.CallableMethod;
 
 /**
  * Function that gets the extension of a file.

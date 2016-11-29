@@ -24,9 +24,9 @@
 package es.ucm.povaleFiles.functions;
 
 import es.ucm.povaleFiles.entities.Directory;
-import tfg.Entity.ListEntity;
-import tfg.Function.Function;
-import tfg.annotation.CallableMethod;
+import es.ucm.povale.entity.ListEntity;
+import es.ucm.povale.function.Function;
+import es.ucm.povale.annotation.CallableMethod;
 
 /**
  * Function that obtains the files of a given directory, including those contained
