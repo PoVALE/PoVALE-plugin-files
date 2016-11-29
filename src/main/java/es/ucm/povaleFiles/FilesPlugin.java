@@ -17,9 +17,9 @@ import es.ucm.povaleFiles.functions.IsDirectory;
 import es.ucm.povaleFiles.functions.Name;
 import java.util.Arrays;
 import java.util.List;
-import tfg.Function.Function;
-import tfg.Plugin.PluginInfo;
-import tfg.Predicate.Predicate;
+import es.ucm.povale.function.Function;
+import es.ucm.povale.plugin.PluginInfo;
+import es.ucm.povale.predicate.Predicate;
 
 /**
  *

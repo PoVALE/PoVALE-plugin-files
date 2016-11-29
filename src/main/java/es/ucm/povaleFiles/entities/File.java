@@ -23,7 +23,9 @@
  */
 package es.ucm.povaleFiles.entities;
 
-import tfg.Entity.Entity;
+import es.ucm.povale.entity.Entity;
+
+
 
 /**
  * This class represents a file or directory of a given file system.

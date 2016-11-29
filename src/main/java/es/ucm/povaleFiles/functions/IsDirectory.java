@@ -25,8 +25,8 @@ package es.ucm.povaleFiles.functions;
 
 import es.ucm.povaleFiles.entities.Directory;
 import es.ucm.povaleFiles.entities.File;
-import tfg.Predicate.Predicate;
-import tfg.annotation.CallableMethod;
+import es.ucm.povale.predicate.Predicate;
+import es.ucm.povale.annotation.CallableMethod;
 
 /**
  * Predicate that checks whether a file name is a directory.
