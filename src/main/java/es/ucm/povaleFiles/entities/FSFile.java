@@ -23,6 +23,7 @@
  */
 package es.ucm.povaleFiles.entities;
 
+import es.ucm.povale.entity.Entity;
 import java.nio.file.Path;
 
 /**
@@ -30,7 +31,7 @@ import java.nio.file.Path;
  * 
  * @author manuel
  */
-public class FSFile implements File {
+public class FSFile implements File  {
     protected final Path path;
 
     public FSFile(Path path) {
@@ -63,5 +64,10 @@ public class FSFile implements File {
             return fileName.substring(lastDotIndx + 1);
         }
     }
+    
+    public static void main(String[] args) {
+        Entity e = new FSFile(null);
+    }
+    
 
 }
