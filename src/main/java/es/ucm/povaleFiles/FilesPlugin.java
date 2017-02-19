@@ -5,6 +5,7 @@
  */
 package es.ucm.povaleFiles;
 
+import es.ucm.povale.entity.Entity;
 import es.ucm.povaleFiles.entities.Directory;
 import es.ucm.povaleFiles.entities.File;
 import es.ucm.povaleFiles.functions.BaseName;
@@ -20,6 +21,8 @@ import java.util.List;
 import es.ucm.povale.function.Function;
 import es.ucm.povale.plugin.PluginInfo;
 import es.ucm.povale.predicate.Predicate;
+import java.util.Map;
+import es.ucm.povale.views.parameter.ParameterEditor;
 
 /**
  *
@@ -61,5 +64,25 @@ public class FilesPlugin extends PluginInfo {
                 Directory.class
         );
     }
+
+    @Override
+    public List<String> getEditorTypes() {
+        return Arrays.asList("FileEntity","DirectoryEntity");
+    }
+    
+     @Override
+    public ParameterEditor<? extends Entity> getEditor(String name, Map<String,String> parameters){
+        if(name == "FileEntity"){
+            return new FileEditor(parameters);
+        }
+            
+        else if(name == "DirectoryEntity"){
+            return new FileEditor(parameters);
+        }
+        
+        return null;
+    }
+    
+
     
 }
