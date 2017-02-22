@@ -24,6 +24,8 @@
 package es.ucm.povaleFiles.entities;
 
 import es.ucm.povale.entity.Entity;
+import java.io.IOException;
+import java.io.InputStream;
 
 
 
@@ -54,4 +56,10 @@ public interface File extends Entity {
      */
     public String getExtension();
     
+    /**
+     * It returns an input stream for accessing the contents of the file.
+     * 
+     * @return contents of the file.
+     */
+    public InputStream getContents() throws IOException;
 }
