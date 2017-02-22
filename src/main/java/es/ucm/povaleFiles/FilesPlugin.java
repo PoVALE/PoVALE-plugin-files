@@ -19,10 +19,10 @@ import es.ucm.povaleFiles.functions.Name;
 import java.util.Arrays;
 import java.util.List;
 import es.ucm.povale.function.Function;
+import es.ucm.povale.parameter.ParameterEditor;
 import es.ucm.povale.plugin.PluginInfo;
 import es.ucm.povale.predicate.Predicate;
 import java.util.Map;
-import es.ucm.povale.views.parameter.ParameterEditor;
 
 /**
  *

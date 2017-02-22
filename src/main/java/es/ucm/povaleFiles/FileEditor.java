@@ -1,6 +1,6 @@
 package es.ucm.povaleFiles;
 
-import es.ucm.povale.views.parameter.ParameterEditor;
+import es.ucm.povale.parameter.ParameterEditor;
 import es.ucm.povaleFiles.entities.FSFile;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -73,9 +73,12 @@ public class FileEditor extends ParameterEditor<FSFile> {
         return (selectedFile == null);
     }
 
+    
+    
     @Override
     public void setStage(Stage stage) {
         this.stage = stage;
     }
+
 
 }
