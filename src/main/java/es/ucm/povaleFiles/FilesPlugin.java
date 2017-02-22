@@ -72,11 +72,11 @@ public class FilesPlugin extends PluginInfo {
     
      @Override
     public ParameterEditor<? extends Entity> getEditor(String name, Map<String,String> parameters){
-        if(name == "FileEntity"){
+        if("FileEntity".equals(name)){
             return new FileEditor(parameters);
         }
             
-        else if(name == "DirectoryEntity"){
+        else if("DirectoryEntity".equals(name)){
             return new FileEditor(parameters);
         }
         
