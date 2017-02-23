@@ -24,6 +24,9 @@
 package es.ucm.povaleFiles.entities;
 
 import es.ucm.povale.entity.Entity;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Path;
 
 /**
@@ -67,6 +70,11 @@ public class FSFile implements File  {
     
     public static void main(String[] args) {
         Entity e = new FSFile(null);
+    }
+
+    @Override
+    public InputStream getContents() throws IOException {
+        return new FileInputStream(path.toFile());
     }
     
 
