@@ -69,10 +69,8 @@ public class DirectoryEditor extends ParameterEditor<FSFile> {
 
     @Override
     public boolean isValid() {
-        return (path == null);
+        return (path != null);
     }
-
-    
     
     @Override
     public void setStage(Stage stage) {

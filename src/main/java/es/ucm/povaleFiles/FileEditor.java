@@ -70,7 +70,7 @@ public class FileEditor extends ParameterEditor<FSFile> {
 
     @Override
     public boolean isValid() {
-        return (selectedFile == null);
+        return (path != null);
     }
 
     
