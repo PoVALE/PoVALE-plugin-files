@@ -25,9 +25,21 @@ package es.ucm.povaleFiles.entities;
 
 import es.ucm.povale.entity.Entity;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Path;
+import java.util.Base64;
+import java.util.Base64.Encoder;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Text;
+import java.nio.file.Files;
+import java.util.Base64.Decoder;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.apache.commons.io.FileUtils;
+
 
 /**
  * Instances of this class represent physical files in the current file system.
@@ -75,6 +87,28 @@ public class FSFile implements File  {
     @Override
     public InputStream getContents() throws IOException {
         return new FileInputStream(path.toFile());
+    }
+
+    @Override
+    public void toXML(Element contents, Document doc) {
+        Encoder encoder = Base64.getEncoder();
+        Text t;
+        try {
+            t = doc.createTextNode(encoder.encodeToString(Files.readAllBytes(path)));
+            contents.appendChild(t);   
+        } catch (IOException ex) {
+            Logger.getLogger(FSFile.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void fromXML(Element contents, Document doc) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream("path")){
+            Decoder decoder = Base64.getDecoder();
+            String t = contents.getNodeValue();
+            fileOutputStream.write(decoder.decode(t));
+        } catch (IOException ex) {
+            Logger.getLogger(FSFile.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 
