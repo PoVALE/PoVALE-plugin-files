@@ -25,12 +25,15 @@ package es.ucm.povaleFiles.entities;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.Charset;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 /**
  *
@@ -102,6 +105,15 @@ public class FSDirectory extends FSFile implements Directory {
                     .collect(Collectors.toList());
         } catch (IOException ex) {
             throw new RuntimeException(ex);
+        }
+    }
+
+    @Override
+    public void writeToZip(ZipOutputStream zipFile, String outputFile) throws IOException {
+        String path = outputFile + "/" + getName();
+        List<File> children = children();
+        for(File file: children){
+            file.writeToZip(zipFile, path);
         }
     }
 

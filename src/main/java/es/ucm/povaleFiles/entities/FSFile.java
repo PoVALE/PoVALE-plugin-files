@@ -28,6 +28,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.Base64;
 import java.util.Base64.Encoder;
@@ -38,7 +40,10 @@ import java.nio.file.Files;
 import java.util.Base64.Decoder;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 
 
 /**
@@ -109,6 +114,18 @@ public class FSFile implements File  {
         } catch (IOException ex) {
             Logger.getLogger(FSFile.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @Override
+    public void writeToZip(ZipOutputStream zipFile, String outputFile) throws IOException {
+        byte[] data;
+        String path = outputFile + "/" + getName();
+        ZipEntry zipEntry = new ZipEntry(path);
+        zipFile.putNextEntry(zipEntry);
+        String content = IOUtils.toString(getContents(), "UTF-8");
+        data = content.getBytes(Charset.forName("UTF-8"));
+        zipFile.write(data, 0, content.length());
+        zipFile.closeEntry();
     }
     
 
