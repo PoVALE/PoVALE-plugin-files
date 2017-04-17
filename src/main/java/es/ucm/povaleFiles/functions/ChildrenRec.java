@@ -27,6 +27,7 @@ import es.ucm.povaleFiles.entities.Directory;
 import es.ucm.povale.entity.ListEntity;
 import es.ucm.povale.function.Function;
 import es.ucm.povale.annotation.CallableMethod;
+import es.ucm.povale.annotation.NameMethod;
 
 /**
  * Function that obtains the recursive children of a given directory, include
@@ -44,6 +45,11 @@ public class ChildrenRec extends Function {
     @CallableMethod
     public ListEntity childrenRec(Directory d) {
         return new ListEntity(d.childrenRec());
+    }
+    
+    @NameMethod
+    public String getMessage(){
+        return "sus ficheros y directorios ";
     }
 
 }

@@ -42,7 +42,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 
 
@@ -128,5 +127,8 @@ public class FSFile implements File  {
         zipFile.closeEntry();
     }
     
-
+    @Override
+    public String toString(){
+        return this.getName()  + " ";
+    }
 }

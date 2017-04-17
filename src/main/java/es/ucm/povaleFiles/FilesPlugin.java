@@ -29,7 +29,7 @@ import java.util.Map;
  * @author manuel
  */
 public class FilesPlugin extends PluginInfo {
-    public static String FILES_ID_PLUGIN = "es.ucm.povale.FilesPlugin";
+    public static String FILES_ID_PLUGIN = "es.ucm.povaleFiles.FilesPlugin";
     
 
     @Override

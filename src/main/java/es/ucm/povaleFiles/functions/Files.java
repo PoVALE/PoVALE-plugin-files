@@ -29,6 +29,7 @@ import java.util.List;
 import es.ucm.povale.entity.ListEntity;
 import es.ucm.povale.function.Function;
 import es.ucm.povale.annotation.CallableMethod;
+import es.ucm.povale.annotation.NameMethod;
 
 /**
  * Function that obtains the immediate files of a given directory.
@@ -45,6 +46,11 @@ public class Files extends Function {
     @CallableMethod
     public ListEntity files(Directory d) {
         return new ListEntity(d.files());
+    }
+    
+    @NameMethod
+    public String getMessage(){
+        return "sus ficheros ";
     }
     
 }

@@ -27,6 +27,7 @@ import es.ucm.povaleFiles.entities.File;
 import es.ucm.povale.entity.StringEntity;
 import es.ucm.povale.function.Function;
 import es.ucm.povale.annotation.CallableMethod;
+import es.ucm.povale.annotation.NameMethod;
 
 /**
  * Function that gets the name of a file.
@@ -43,5 +44,10 @@ public class Name extends Function {
     @CallableMethod
     public StringEntity name(File f) {
         return new StringEntity(f.getName());
+    }
+    
+    @NameMethod
+    public String getMessage(){
+        return "su nombre es: ";
     }
 }

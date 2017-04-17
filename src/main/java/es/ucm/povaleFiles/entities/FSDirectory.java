@@ -117,5 +117,9 @@ public class FSDirectory extends FSFile implements Directory {
         }
     }
 
+    @Override
+    public String toString(){
+        return this.getBaseName() + " ";
+    }
     
 }

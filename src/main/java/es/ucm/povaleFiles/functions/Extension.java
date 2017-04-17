@@ -27,6 +27,7 @@ import es.ucm.povaleFiles.entities.File;
 import es.ucm.povale.entity.StringEntity;
 import es.ucm.povale.function.Function;
 import es.ucm.povale.annotation.CallableMethod;
+import es.ucm.povale.annotation.NameMethod;
 
 /**
  * Function that gets the extension of a file.
@@ -43,5 +44,10 @@ public class Extension extends Function {
     @CallableMethod
     public StringEntity extension(File f) {
         return new StringEntity(f.getExtension());
+    }
+    
+    @NameMethod
+    public String getMessage(){
+        return "su extension es ";
     }
 }
