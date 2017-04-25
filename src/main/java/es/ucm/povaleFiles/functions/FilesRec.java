@@ -23,6 +23,7 @@
  */
 package es.ucm.povaleFiles.functions;
 
+import es.ucm.povale.annotation.ParamDescription;
 import es.ucm.povaleFiles.entities.Directory;
 import es.ucm.povale.entity.ListEntity;
 import es.ucm.povale.function.Function;
@@ -43,7 +44,7 @@ public class FilesRec extends Function {
     }
     
     @CallableMethod
-    public ListEntity filesRec(Directory d) {
+    public ListEntity filesRec(@ParamDescription("Directorio") Directory d) {
         return new ListEntity(d.filesRec());
     }
     

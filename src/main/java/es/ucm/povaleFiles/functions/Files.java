@@ -23,6 +23,7 @@
  */
 package es.ucm.povaleFiles.functions;
 
+import es.ucm.povale.annotation.ParamDescription;
 import es.ucm.povaleFiles.entities.Directory;
 import es.ucm.povaleFiles.entities.File;
 import java.util.List;
@@ -44,7 +45,7 @@ public class Files extends Function {
     }
     
     @CallableMethod
-    public ListEntity files(Directory d) {
+    public ListEntity files(@ParamDescription("Directorio") Directory d) {
         return new ListEntity(d.files());
     }
     

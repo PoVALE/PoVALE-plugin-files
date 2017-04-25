@@ -23,6 +23,7 @@
  */
 package es.ucm.povaleFiles.functions;
 
+import es.ucm.povale.annotation.ParamDescription;
 import es.ucm.povaleFiles.entities.Directory;
 import es.ucm.povaleFiles.entities.File;
 import es.ucm.povale.predicate.Predicate;
@@ -42,7 +43,7 @@ public class IsDirectory extends Predicate {
     }
     
     @CallableMethod
-    public boolean isDirectory(File f) {
+    public boolean isDirectory(@ParamDescription("Fichero a comprobar") File f) {
         return f instanceof Directory;
     }
     

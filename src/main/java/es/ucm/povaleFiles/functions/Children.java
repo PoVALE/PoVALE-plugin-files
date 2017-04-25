@@ -25,6 +25,7 @@ package es.ucm.povaleFiles.functions;
 
 import es.ucm.povale.annotation.CallableMethod;
 import es.ucm.povale.annotation.NameMethod;
+import es.ucm.povale.annotation.ParamDescription;
 import es.ucm.povale.entity.ListEntity;
 import es.ucm.povale.function.Function;
 import es.ucm.povaleFiles.entities.Directory;
@@ -43,7 +44,7 @@ public class Children extends Function {
     }
     
     @CallableMethod
-    public ListEntity children(Directory d) {
+    public ListEntity children(@ParamDescription("Directorio") Directory d) {
         return new ListEntity(d.children());
     }
     

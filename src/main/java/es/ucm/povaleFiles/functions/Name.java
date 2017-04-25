@@ -23,6 +23,7 @@
  */
 package es.ucm.povaleFiles.functions;
 
+import es.ucm.povale.annotation.ParamDescription;
 import es.ucm.povaleFiles.entities.File;
 import es.ucm.povale.entity.StringEntity;
 import es.ucm.povale.function.Function;
@@ -42,7 +43,7 @@ public class Name extends Function {
     }
     
     @CallableMethod
-    public StringEntity name(File f) {
+    public StringEntity name(@ParamDescription("Fichero o directorio") File f) {
         return new StringEntity(f.getName());
     }
     
