@@ -28,7 +28,7 @@ import es.ucm.povaleFiles.entities.Directory;
 import es.ucm.povale.entity.ListEntity;
 import es.ucm.povale.function.Function;
 import es.ucm.povale.annotation.CallableMethod;
-import es.ucm.povale.annotation.NameMethod;
+import java.util.List;
 
 /**
  * Function that obtains the files of a given directory, including those contained
@@ -38,19 +38,25 @@ import es.ucm.povale.annotation.NameMethod;
  */
 public class FilesRec extends Function {
 
+    private String message;
     @Override
     public String getName() {
         return "files-rec";
     }
     
     @CallableMethod
-    public ListEntity filesRec(@ParamDescription("Directorio") Directory d) {
-        return new ListEntity(d.filesRec());
+    public ListEntity filesRec(@ParamDescription("todos sus ficheros") Directory d) {
+        List childrenList = d.filesRec();
+        message = "";
+        for(int i=0; i<childrenList.size();i++){
+            message +=childrenList.get(i).toString() + ", ";
+        }
+        return new ListEntity(childrenList);
     }
     
-    @NameMethod
+    @Override
     public String getMessage(){
-        return "sus ficheros ";
+        return message;
     }
 
 }

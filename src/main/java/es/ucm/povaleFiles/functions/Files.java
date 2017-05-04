@@ -25,12 +25,10 @@ package es.ucm.povaleFiles.functions;
 
 import es.ucm.povale.annotation.ParamDescription;
 import es.ucm.povaleFiles.entities.Directory;
-import es.ucm.povaleFiles.entities.File;
-import java.util.List;
 import es.ucm.povale.entity.ListEntity;
 import es.ucm.povale.function.Function;
 import es.ucm.povale.annotation.CallableMethod;
-import es.ucm.povale.annotation.NameMethod;
+import java.util.List;
 
 /**
  * Function that obtains the immediate files of a given directory.
@@ -39,19 +37,26 @@ import es.ucm.povale.annotation.NameMethod;
  */
 public class Files extends Function {
 
+    private String message;
+    
     @Override
     public String getName() {
         return "files";
     }
     
     @CallableMethod
-    public ListEntity files(@ParamDescription("Directorio") Directory d) {
-        return new ListEntity(d.files());
+    public ListEntity files(@ParamDescription("sus ficheros") Directory d) {
+        List childrenList = d.files();
+        message = "";
+        for(int i=0; i<childrenList.size();i++){
+            message +=childrenList.get(i).toString() + ", ";
+        }
+        return new ListEntity(childrenList);
     }
     
-    @NameMethod
+    @Override
     public String getMessage(){
-        return "sus ficheros ";
+        return message;
     }
     
 }

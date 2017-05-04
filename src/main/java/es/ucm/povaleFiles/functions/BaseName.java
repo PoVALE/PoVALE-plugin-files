@@ -28,7 +28,7 @@ import es.ucm.povaleFiles.entities.File;
 import es.ucm.povale.entity.StringEntity;
 import es.ucm.povale.function.Function;
 import es.ucm.povale.annotation.CallableMethod;
-import es.ucm.povale.annotation.NameMethod;
+
 
 /**
  * Function that gets the base name of a file.
@@ -44,13 +44,13 @@ public class BaseName extends Function {
     
     @CallableMethod
     public StringEntity baseName(
-            @ParamDescription("Fichero") File f
+            @ParamDescription("El nombre del fichero sin extension") File f
     ) {
         return new StringEntity(f.getBaseName());
     }
     
-    @NameMethod
+    @Override
     public String getMessage(){
-        return "su nombre es: ";
+        return "el nombre del fichero";
     }
 }
