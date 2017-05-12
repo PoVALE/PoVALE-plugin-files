@@ -24,10 +24,10 @@
 package es.ucm.povaleFiles.functions;
 
 import es.ucm.povale.annotation.ParamDescription;
-import es.ucm.povaleFiles.entities.File;
 import es.ucm.povale.entity.StringEntity;
 import es.ucm.povale.function.Function;
 import es.ucm.povale.annotation.CallableMethod;
+import es.ucm.povaleFiles.entities.FileEntity;
 
 /**
  * Function that gets the extension of a file.
@@ -42,7 +42,7 @@ public class Extension extends Function {
     }
     
     @CallableMethod
-    public StringEntity extension(@ParamDescription("La extension del fichero") File f) {
+    public StringEntity extension(@ParamDescription("La extension del fichero") FileEntity f) {
         return new StringEntity(f.getExtension());
     }
     

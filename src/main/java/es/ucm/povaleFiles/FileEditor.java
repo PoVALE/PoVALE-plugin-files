@@ -29,8 +29,6 @@ public class FileEditor extends ParameterEditor<FSFile> {
         this.parameters = parameters;
         this.pane = new HBox();
         this.fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().addAll(
-                new ExtensionFilter("Java Files", "*.java"));
 
         this.selectButton = new Button("Abrir");
         this.path = new TextField();

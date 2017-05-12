@@ -39,16 +39,16 @@ import java.util.zip.ZipOutputStream;
  *
  * @author manuel
  */
-public class FSDirectory extends FSFile implements Directory {
+public class FSDirectory extends FSFile implements DirectoryEntity {
 
     public FSDirectory(Path path) {
         super(path);
     }
 
     @Override
-    public List<File> children() {
+    public List<FileEntity> children() {
         try {
-            List<File> result = new LinkedList<>();
+            List<FileEntity> result = new LinkedList<>();
             
             DirectoryStream<Path> children = Files.newDirectoryStream(path);
             for (Path p : children) {
@@ -65,7 +65,7 @@ public class FSDirectory extends FSFile implements Directory {
     }
 
     @Override
-    public List<File> childrenRec() {
+    public List<FileEntity> childrenRec() {
         try {
             return Files.walk(path)
                     .map(p -> {
@@ -82,9 +82,9 @@ public class FSDirectory extends FSFile implements Directory {
     }
 
     @Override
-    public List<File> files() {
+    public List<FileEntity> files() {
         try {
-            List<File> result = new LinkedList<>();
+            List<FileEntity> result = new LinkedList<>();
             DirectoryStream<Path> children = Files.newDirectoryStream(path,
                     p -> !Files.isDirectory(p));
             children.forEach(p -> result.add(new FSFile(p)));
@@ -97,7 +97,7 @@ public class FSDirectory extends FSFile implements Directory {
     
 
     @Override
-    public List<File> filesRec() {
+    public List<FileEntity> filesRec() {
         try {
             return Files.walk(path)
                     .filter(p -> !Files.isDirectory(p))
@@ -111,8 +111,8 @@ public class FSDirectory extends FSFile implements Directory {
     @Override
     public void writeToZip(ZipOutputStream zipFile, String outputFile) throws IOException {
         String path = outputFile + "/" + getName();
-        List<File> children = children();
-        for(File file: children){
+        List<FileEntity> children = children();
+        for(FileEntity file: children){
             file.writeToZip(zipFile, path);
         }
     }

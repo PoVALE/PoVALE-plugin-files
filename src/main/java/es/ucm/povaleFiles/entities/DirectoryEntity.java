@@ -29,9 +29,9 @@ import java.util.List;
  *
  * @author manuel
  */
-public interface Directory extends File {
-    public List<File> children();
-    public List<File> childrenRec();
-    public List<File> files();
-    public List<File> filesRec();
+public interface DirectoryEntity extends FileEntity {
+    public List<FileEntity> children();
+    public List<FileEntity> childrenRec();
+    public List<FileEntity> files();
+    public List<FileEntity> filesRec();
 }

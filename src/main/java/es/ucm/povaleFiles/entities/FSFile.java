@@ -50,7 +50,7 @@ import org.apache.commons.io.IOUtils;
  * 
  * @author manuel
  */
-public class FSFile implements File  {
+public class FSFile implements FileEntity  {
     protected final Path path;
 
     public FSFile(Path path) {

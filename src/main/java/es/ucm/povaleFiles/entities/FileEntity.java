@@ -34,7 +34,7 @@ import java.io.InputStream;
  * 
  * @author PoVALE Team.
  */
-public interface File extends Entity {
+public interface FileEntity extends Entity {
     /**
      * It Returns the name of the file.
      * 

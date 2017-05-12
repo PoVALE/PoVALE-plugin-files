@@ -24,10 +24,10 @@
 package es.ucm.povaleFiles.functions;
 
 import es.ucm.povale.annotation.ParamDescription;
-import es.ucm.povaleFiles.entities.Directory;
-import es.ucm.povaleFiles.entities.File;
 import es.ucm.povale.predicate.Predicate;
 import es.ucm.povale.annotation.CallableMethod;
+import es.ucm.povaleFiles.entities.DirectoryEntity;
+import es.ucm.povaleFiles.entities.FileEntity;
 
 /**
  * Predicate that checks whether a file name is a directory.
@@ -42,8 +42,8 @@ public class IsDirectory extends Predicate {
     }
     
     @CallableMethod
-    public boolean isDirectory(@ParamDescription("es un directorio ") File f) {
-        return f instanceof Directory;
+    public boolean isDirectory(@ParamDescription("es un directorio ") FileEntity f) {
+        return f instanceof DirectoryEntity;
     }
     
     

@@ -6,8 +6,6 @@
 package es.ucm.povaleFiles;
 
 import es.ucm.povale.entity.Entity;
-import es.ucm.povaleFiles.entities.Directory;
-import es.ucm.povaleFiles.entities.File;
 import es.ucm.povaleFiles.functions.BaseName;
 import es.ucm.povaleFiles.functions.Children;
 import es.ucm.povaleFiles.functions.ChildrenRec;
@@ -23,6 +21,8 @@ import es.ucm.povale.parameter.ParameterEditor;
 import es.ucm.povale.plugin.PluginInfo;
 import es.ucm.povale.predicate.Predicate;
 import java.util.Map;
+import es.ucm.povaleFiles.entities.DirectoryEntity;
+import es.ucm.povaleFiles.entities.FileEntity;
 
 /**
  *
@@ -59,9 +59,8 @@ public class FilesPlugin extends PluginInfo {
 
     @Override
     public List<Class<?>> getEntities() {
-        return Arrays.asList(
-                File.class,
-                Directory.class
+        return Arrays.asList(FileEntity.class,
+                DirectoryEntity.class
         );
     }
 
