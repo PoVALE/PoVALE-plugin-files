@@ -48,7 +48,7 @@ public class DirectoryEditor extends ParameterEditor<FSFile> {
                         directoryChooser.showDialog(stage);
                  
                 if(selectedDirectory == null){
-                    path.setText("No Directory selected");
+                    path=null;
                 }else{
                     path.setText(selectedDirectory.getAbsolutePath());
                 }
